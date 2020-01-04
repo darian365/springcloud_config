@@ -1,3 +1,7 @@
+branch: master
+
+env: qa
+
 server:
   port: 8781
 
