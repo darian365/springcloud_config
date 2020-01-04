@@ -1,0 +1,59 @@
+branch: release_1.0.0
+env: dev
+
+server:
+  port: 8781
+
+spring:
+  application:
+    name: order-service
+  redis:
+    database: 0
+    host: 47.254.95.37
+    port: 6379
+    timeout: 2000
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth: 
+    sampler:
+      probability: 0.5
+      
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:8761/eureka
+      
+#self-defined load balancer
+product-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connect-timeout: 2000
+        read-timeout: 2000
+
+# enable/disable the hystrix timeout and set the timeout miliseconds
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+            
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        
+
+    
