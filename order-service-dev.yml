@@ -1,3 +1,7 @@
+branch: master
+
+env: dev
+
 server:
   port: 8781
 
