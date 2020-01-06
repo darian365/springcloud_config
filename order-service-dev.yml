@@ -1,6 +1,6 @@
 branch: master
 
-env: dev-001
+env: dev-002
 
 server:
   port: 8781
