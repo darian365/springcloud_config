@@ -1,5 +1,5 @@
 branch: release_1.0.0
-env: qa
+env: qa_001
 
 server:
   port: 8781
