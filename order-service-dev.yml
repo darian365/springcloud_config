@@ -1,5 +1,5 @@
 branch: release_1.0.0
-env: dev_001
+env: dev_002
 
 server:
   port: 8781
